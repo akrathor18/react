@@ -1,12 +1,18 @@
-import { useState } from 'react'
+
 import './App.css'
+import Profile from './context/components/Profile'
+import Profile from './components/Profile'
+import UserContextProvider from './context/components/UserContextProvider'
 
 function App() {
+  
 
   return (
-  <>
-  <h1 className='text-red-500'>Hello world</h1>
-  </>
+    <UserContextProvider>
+      <h1>React with Chai and share is important</h1>
+      <Login />
+      <Profile />
+    </UserContextProvider>
   )
 }
 
