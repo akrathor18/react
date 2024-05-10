@@ -12,19 +12,26 @@ function Login() {
         setUser({username, password})
     }
   return (
-    <div>
+    <center>
         <h2>Login</h2>
-        <input type='text'
+    <div className='flex justify-center '>
+        <input
+        className='text-black p-2 mr-5'
+        type='text'
         value={username}
         onChange={(e) => setUsername(e.target.value) }
         placeholder='username'  />
         {" "}
-        <input type='text' 
+        <input type='password' 
+        className='text-black p-2 mr-5'
         value={password}
         onChange={(e) => setPassword(e.target.value) }
         placeholder='password'  />
-        <button onClick={handleSubmit}>Submit</button>
     </div>
+        <button
+        className='bg-blue-600 m-8 p-2 rounded-xl'
+        onClick={handleSubmit}>Submit</button>
+        </center>
   )
 }
 
