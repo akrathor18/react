@@ -6,8 +6,9 @@ import TextFrom from './components/TextFrom.jsx'
 function App() {
  return(
   <>
-  {/* <Nav /> */}
+  <Nav />
   <TextFrom/>
+  
   </>
  )
 }
