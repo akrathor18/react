@@ -17,7 +17,8 @@ function TextFrom() {
         setText(event.target.value);
     };
   return (
-    <div className=" dark:text-stone-50 dark:bg-neutral-500 mt-5 container w-full bg-white border border-slate-200 grid grid-cols-6 gap-2 rounded-xl p-2 text-sm">
+   
+     <div className="flex dark:text-stone-300 dark:bg-neutral-500 mt-5 w-3/4 bg-white border border-slate-200 grid grid-cols-6 gap-2 rounded-xl p-2 text-sm">
       <h1 className="text-center dark:text-stone-100 text-slate-800 text-xl font-bold col-span-6">
         Enter the Text
       </h1>

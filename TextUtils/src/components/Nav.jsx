@@ -55,7 +55,7 @@ function Nav({title='Ashish'}) {
           </li>
         </ul>
       </div>
-      <div class="toggle">
+      <div className="toggle">
   <input type="checkbox" 
    onChange={onChangeBtn}
   />
