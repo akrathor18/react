@@ -6,6 +6,11 @@ function Nav({title='Ashish'}) {
     document.querySelector('html').classList.remove("light", "dark");
     document.querySelector('html').classList.add(darkModeStatus ? "light" : "dark");
 };
+if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark');
+} else {
+  document.documentElement.classList.remove('dark')
+}
 
   return (
     <div className="relative w-full dark:bg-black bg-white">
@@ -56,7 +61,9 @@ function Nav({title='Ashish'}) {
         </ul>
       </div>
       <div className="toggle">
-  <input type="checkbox" 
+  <input 
+  defaultChecked={"checked"}
+  type="checkbox" 
    onChange={onChangeBtn}
   />
   <label></label>

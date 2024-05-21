@@ -16,6 +16,7 @@ function TextFrom() {
     const handleChange = (event) => {
         setText(event.target.value);
     };
+    
   return (
    
      <div className="flex dark:text-stone-300 dark:bg-neutral-500 mt-5 w-3/4 bg-white border border-slate-200 grid grid-cols-6 gap-2 rounded-xl p-2 text-sm">
