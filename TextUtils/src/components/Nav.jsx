@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function Nav({title='Ashish'}) {
   const onChangeBtn = (e) => {
@@ -35,28 +36,28 @@ if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localS
       <div className="hidden lg:block">
         <ul className="inline-flex space-x-8">
           <li>
-            <a
-              href="#"
+            <Link
+              to="/Home"
               className="text-sm font-semibold text-gray-800 dark:text-gray-100 hover:text-gray-900"
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/about"
               className="text-sm font-semibold text-gray-800 dark:text-gray-100 hover:text-gray-900"
             >
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/contact"
               className="text-sm font-semibold text-gray-800 dark:text-gray-100 hover:text-gray-900"
             >
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
