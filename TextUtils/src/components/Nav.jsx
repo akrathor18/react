@@ -16,6 +16,7 @@ if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localS
   return (
     <div className="relative w-full dark:bg-black bg-white">
     <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
+      <Link to='/'>
       <div className="inline-flex items-center space-x-2">
         <span>
           <svg
@@ -33,11 +34,12 @@ if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localS
         </span>
         <span className="font-bold dark:text-gray-100">{title}</span>
       </div>
+      </Link>
       <div className="hidden lg:block">
         <ul className="inline-flex space-x-8">
           <li>
             <Link
-              to="/Home"
+              to="/"
               className="text-sm font-semibold text-gray-800 dark:text-gray-100 hover:text-gray-900"
             >
               Home

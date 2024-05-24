@@ -48,8 +48,8 @@ function TextFrom() {
       </button><br />
       <div className="dark:text-white text-gray-600">
         <h1>Your Text summary</h1>
-        <p>Words: {text.split(" ").length}, Characters: {text.length}</p>
-        <p>Time Take To Read: {(text.split(" ").length*0.008).toFixed(3)}Minutes  </p><br />
+        <p>Words: {text.split(" ").filter((e)=>{ return e.length!=0}).length}, Characters: {text.length}</p>
+        <p>Time Take To Read: {(text.split(" ").filter((e)=>{ return e.length!=0}).length*0.008).toFixed(2)}Minutes  </p><br />
         <h1>Previwe</h1>
         <p>{text}</p>
       </div>
