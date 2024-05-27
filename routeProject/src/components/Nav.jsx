@@ -55,7 +55,16 @@ function Nav() {
               >
                 Contact
               </Link>
-            </li>
+              </li>
+                
+              <li>
+              <Link
+                to="/Error 404"
+                className="text-sm font-semibold text-gray-800 dark:text-gray-100 hover:text-gray-900"
+                >
+                404 Error
+              </Link>
+                </li>
           </ul>
         </div>
         <div className="toggle">

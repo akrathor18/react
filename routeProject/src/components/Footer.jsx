@@ -35,7 +35,7 @@ export function Footer() {
           <span className="ml-4 text-lg font-bold">DevUI</span>
         </div>
         <div className="hidden items-center md:inline-flex">
-          <span className="text-sm font-medium text-black">Ready to Get Started ?</span>
+          <span className="text-sm font-medium dark:text-white text-black">Ready to Get Started ?</span>
           <button
             type="button"
             className="ml-2 rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
