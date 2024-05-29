@@ -83,8 +83,8 @@ function App() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200 bg-white">
-                   { todos.map(todo =>(<tr>
-                      <td className="whitespace-nowrap px-4 py-4">{todos[0].Text}</td>
+                   { todos.map(todo =>(<tr key={todo.key}>
+                      <td className="whitespace-nowrap px-4 py-4">{todo.Text}</td>
 
                       <td className="whitespace-nowrap px-4 py-4">
                         <span className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
