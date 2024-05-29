@@ -83,7 +83,7 @@ function App() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200 bg-white">
-                    <tr>
+                   { todos.map(todo =>(<tr>
                       <td className="whitespace-nowrap px-4 py-4">{todos[0].Text}</td>
 
                       <td className="whitespace-nowrap px-4 py-4">
@@ -101,7 +101,7 @@ function App() {
                           Edit
                         </a>
                       </td>
-                    </tr>
+                    </tr>))}
                   </tbody>
                 </table>
               </div>
