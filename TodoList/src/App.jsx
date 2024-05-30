@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import "./App.css";
 
@@ -8,20 +8,35 @@ function App() {
   const [isComplete, setIsComplete] = useState();
   const [editId, setEditId] = useState(null);
 
+  useEffect(() => {
+    let todos = JSON.parse(localStorage.getItem("todos"));
+    setTodos(todos);
+  }, []);
+
+
   const addTodo = () => {
     if (todo.trim() !== "") {
       if (editId) {
-        setTodos(todos.map((t) => (t.key === editId ? { ...t, Text: todo } : t)));
+        setTodos(
+          todos.map((t) => (t.key === editId ? { ...t, Text: todo } : t))
+        );
         setEditId(null);
       } else {
         setTodos([...todos, { Text: todo, isComplete: false, key: uuidv4() }]);
       }
       setTodo("");
+    saveToLocal()
+
     }
+  };
+
+  const saveToLocal = () => {
+    localStorage.setItem("todos", JSON.stringify(todos));
   };
 
   const deleteTodo = (key) => {
     setTodos(todos.filter((todo) => todo.key !== key));
+    saveToLocal()
   };
 
   const handleInputChange = (event) => {
@@ -34,12 +49,14 @@ function App() {
         todo.key === key ? { ...todo, isComplete: !todo.isComplete } : todo
       )
     );
+    saveToLocal()
   };
 
   const editTodo = (key) => {
     const todoToEdit = todos.find((todo) => todo.key === key);
     setEditId(key);
     setTodo(todoToEdit.Text);
+    saveToLocal()
   };
 
   return (
@@ -103,14 +120,23 @@ function App() {
                     </tr>
                   </thead>
                   {todos.map((todo) => (
-                    <tbody key={todo.key} className="divide-y divide-gray-200 bg-white">
+                    <tbody
+                      key={todo.key}
+                      className="divide-y divide-gray-200 bg-white"
+                    >
                       <tr>
-                        <td className="whitespace-nowrap px-4 py-4">{todo.Text}</td>
+                        <td className="whitespace-nowrap px-4 py-4">
+                          {todo.Text}
+                        </td>
 
                         <td className="whitespace-nowrap px-4 py-4">
                           <span
                             onClick={() => toggleComplete(todo.key)}
-                            className={`inline-flex rounded-full cursor-pointer px-2 text-xs font-semibold leading-5 ${todo.isComplete ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}`}
+                            className={`inline-flex rounded-full cursor-pointer px-2 text-xs font-semibold leading-5 ${
+                              todo.isComplete
+                                ? "bg-green-100 text-green-800"
+                                : "bg-yellow-100 text-yellow-800"
+                            }`}
                           >
                             {todo.isComplete ? "Complete" : "Pending..."}
                           </span>
