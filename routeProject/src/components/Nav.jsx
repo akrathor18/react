@@ -1,6 +1,6 @@
 import React from "react";
 import "./nav.css";
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 function Nav() {
   const switchTheme = (e) => {
     const status = e.currentTarget.checked;
@@ -9,9 +9,11 @@ function Nav() {
   };
 
   return (
-    <div className="relative w-full dark:bg-black bg-white">
+    <nav className="relative w-full dark:bg-black bg-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
-        <Link to="/">
+        <NavLink 
+       className={({ isActive }) => isActive ? "text-green-500" : "text-black dark:text-white"}
+        to="/">
           <div className="inline-flex items-center space-x-2">
             <span>
               <svg
@@ -27,43 +29,59 @@ function Nav() {
                 ></path>
               </svg>
             </span>
-            <span className="font-bold dark:text-gray-100">Ashish</span>
+            <span className="font-bold ">Ashish</span>
           </div>
-        </Link>
+        </NavLink>
         <div className="hidden lg:block">
           <ul className="inline-flex space-x-8">
             <li>
-              <Link
+              <NavLink
                 to="/"
-                className="text-sm font-semibold text-gray-800 dark:text-gray-100 hover:text-gray-900"
+                style={({ isActive }) => ({
+                  color: isActive ? 'red' : 'green',
+                })}
+                className={
+                  `text-sm font-semibold text-gray-800 dark:text-gray-100 hover:text-gray-900 ]`
+                }
               >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
+               style={({ isActive }) => ({
+                color: isActive ? 'red' : 'green',
+              })}
                 to="/about"
-                className="text-sm font-semibold text-gray-800 dark:text-gray-100 hover:text-gray-900"
+                className={`text-sm font-semibold text-gray-800 dark:text-gray-100 hover:text-gray-900 `}
+
               >
                 About
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
-                to="/contact"
-                className="text-sm font-semibold text-gray-800 dark:text-gray-100 hover:text-gray-900"
+              <NavLink
+               style={({ isActive }) => ({
+                color: isActive ? 'red' : 'green',
+              })}
+                to="/contact"                
+                className={`text-sm font-semibold text-gray-800 dark:text-gray-100 hover:text-gray-900 `}
+
               >
                 Contact
-              </Link>
+              </NavLink>
               </li>
                 
               <li>
-              <Link
+              <NavLink
+               style={({ isActive }) => ({
+                color: isActive ? 'red' : 'green',
+              })}
                 to="/Error 404"
-                className="text-sm font-semibold text-gray-800 dark:text-gray-100 hover:text-gray-900"
+                className={`text-sm font-semibold text-gray-800 dark:text-gray-100 hover:text-gray-900 `}
                 >
                 404 Error
-              </Link>
+              </NavLink>
                 </li>
           </ul>
         </div>
@@ -108,7 +126,7 @@ function Nav() {
           </svg>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
 

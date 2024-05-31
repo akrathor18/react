@@ -1,13 +1,15 @@
 import React from "react";
-
+import { useParams } from "react-router-dom";
 function About() {
+  // const < " value="" />
+  // const {id} = useParams()
   return (
     <div className="dark:bg-gray-900">
       <div className="mx-auto max-w-7xl px-4  dark:text-white">
         <div className="flex flex-col space-y-8 pb-10 pt-12 md:pt-24">
           <div className="max-w-max rounded-full border bg-gray-50 p-1 px-3">
             <p className="text-xs font-semibold leading-normal md:text-sm">
-              About the company
+              About the company 
             </p>
           </div>
           <p className="text-3xl font-bold text-gray-900 dark:text-gray-50 md:text-5xl md:leading-10">
