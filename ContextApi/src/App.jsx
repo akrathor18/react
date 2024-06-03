@@ -8,7 +8,7 @@ function App() {
   const [count, setCount] = useState(0)
   
   return (
-    <>
+   <>
     
     <counterContext.Provider value={{count, setCount}}>
       <div>
