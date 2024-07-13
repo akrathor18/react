@@ -21,6 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/user/:id" element={<UserProfile />} />
+          <Route path="/user/:id/:name" element={<Profile/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
@@ -28,7 +29,13 @@ function App() {
     </>
   );
 }
-
+const Profile=()=>{
+  const {name }= useParams()
+  return(
+    // <h1> </h1>
+    <h1> {name}</h1>
+  )
+}
 const UserProfile = () => {
   const { id } = useParams();
 
